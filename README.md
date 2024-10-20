@@ -24,7 +24,7 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 
 - Magisk/KernelSU/Apatch ( Recommended to use Magisk 27008+ )
 - Tricky Store
-- PlayIntegrityFix ( Fork or Original )
+- PlayIntegrityFix
 
 ## Contact/Support
 [💬Telegram](https://t.me/citraintegritytrick)
