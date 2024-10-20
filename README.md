@@ -30,5 +30,5 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 [💬Telegram](https://t.me/citraintegritytrick)
 
 ## Acknowledgement
-- [osm0sis]
+- [osm0sis](https://github.com/osm0sis)
 
