@@ -1,0 +1,27 @@
+name: Zip Module and Save Artifact
+
+on:
+  push:
+    paths:
+      - 'module/**'
+
+jobs:
+  zip_module:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get commit number
+        id: commit_number
+        run: echo "::set-output name=number::$(git rev-parse HEAD)"
+
+      - name: Zip module folder
+        run: zip -r module.zip module
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: TSupport Advanced (${{ steps.commit_number.outputs.number }})
+          path: module.zip
