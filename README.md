@@ -26,9 +26,10 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 - Tricky Store
 - PlayIntegrityFix
 
-**Acknowledgements**
+## Acknowledgements
 
 This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)). I acknowledge that the original authors and contributors have created valuable work, and I encourage users to respect the licensing terms of the original project.
+
 
 ## Contact/Support
 [💬Telegram](https://t.me/citraintegritytrick)
