@@ -30,5 +30,5 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 [💬Telegram](https://t.me/citraintegritytrick)
 
 ## Acknowledgement
-- [PIFF-AutoPif](https://github.com/osm0sis/PlayIntegrityFork)
+- [AutoPif](https://github.com/osm0sis/PlayIntegrityFork/blob/main/module%2Fautopif2.sh)
 
