@@ -31,19 +31,19 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 
 ## TSupport-Advance License
 
-### Ownership
+**Ownership**
 
 All rights to the TSupport-Advance repository are owned by Citra-Standalone.
 
-### Freedom to Fork and Use
+**Freedom to Fork and Use**
 
 You are free to fork, use, and distribute this code for any purpose, provided that you do not claim ownership of the original repository. Proper attribution to the original creators is appreciated.
 
-### Freedom to Modify
+**Freedom to Modify**
 
 You have the right to modify the code without any restrictions. You are encouraged to contribute back any improvements or changes you make to the community.
 
-### Acknowledgements
+**Acknowledgements**
 
 This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)) without formal permission. I acknowledge that the original authors and contributors have created valuable work, and I encourage users to respect the licensing terms of the original project.
 
