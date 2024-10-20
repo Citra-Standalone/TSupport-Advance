@@ -42,7 +42,7 @@ You have the right to modify the code without any restrictions. You are encourag
 
 **Acknowledgements**
 
-This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)) without formal permission. I acknowledge that the original authors and contributors have created valuable work, and I encourage users to respect the licensing terms of the original project.
+This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)). I acknowledge that the original authors and contributors have created valuable work, and I encourage users to respect the licensing terms of the original project.
 
 ## Contact/Support
 [💬Telegram](https://t.me/citraintegritytrick)
