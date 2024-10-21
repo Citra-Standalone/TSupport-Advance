@@ -23,5 +23,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: TSupport-Advanced (${{ steps.commit_number.outputs.number }})
+          name: TSupport-Advance (${{ steps.commit_number.outputs.number }})
           path: TSP-A.zip
