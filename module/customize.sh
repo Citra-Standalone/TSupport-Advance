@@ -45,7 +45,9 @@ VERSION=$(grep 'version=' $MODPATH/module.prop | cut -d '=' -f 2)
 echo -e "\nTSupport Advance ( $VERSION )"
 sleep 0.8  # Delay for 0.8 seconds
 echo "Open Source Project ( OSP )"
-sleep 1  # Delay for 0.8 seconds
+sleep 0.8  # Delay for 0.8 seconds
+echo "Under GNU General Public License 3.0"
+sleep 1 # Delay for 1 seconds
 echo -e "Brought by Citra-Standalone\n"
 sleep 0.5
 
