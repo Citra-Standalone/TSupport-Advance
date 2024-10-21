@@ -1,7 +1,7 @@
 id=tsupport-advance
 name=TSupport Advance
-version=R211024
-versionCode=211024
+version=R241021
+versionCode=241021
 author=Citra-Standalone
 description=When the moonlight shines on the silver lake, a path appears for those determined to move ahead.
 updateJson=https://raw.githubusercontent.com/citra-standalone/TSupport-Advance/main/release.json
