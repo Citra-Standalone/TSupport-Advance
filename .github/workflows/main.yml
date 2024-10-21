@@ -16,5 +16,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: TSupport-Advance${{ github.run_number }}
+          name: TSupport-Advance${{ github.run_number }}.zip
           path: module/**
