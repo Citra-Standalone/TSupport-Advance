@@ -42,7 +42,7 @@ fi
 VERSION=$(grep 'version=' $MODPATH/module.prop | cut -d '=' -f 2)
 
 # Display the text with the extracted version
-echo -e "\nTSupport-Advance ( TSP-A-$VERSION )"
+echo -e "\nTSupport-Advance ( $VERSION )"
 sleep 0.8  # Delay for 0.8 seconds
 echo "Open Source Project ( OSP )"
 sleep 0.8  # Delay for 0.8 seconds
