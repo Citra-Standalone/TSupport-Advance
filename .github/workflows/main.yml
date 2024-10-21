@@ -6,7 +6,7 @@ on:
       - 'module/**'
 
 jobs:
-  zip_module:
+  module_compressor:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,11 +17,11 @@ jobs:
         id: commit_number
         run: echo "::set-output name=number::$(git rev-parse HEAD)"
 
-      - name: Zip module folder
-        run: zip -r module.zip module
+      - name: Compress module folder to zip
+        run: zip -r TSP-A.zip module
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: TSupport-Advanced (${{ steps.commit_number.outputs.number }})
-          path: module.zip
+          path: TSP-A.zip
