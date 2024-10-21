@@ -46,7 +46,7 @@ echo -e "\nTSupport-Advance ( TSP-A-$VERSION )"
 sleep 0.8  # Delay for 0.8 seconds
 echo "Open Source Project ( OSP )"
 sleep 0.8  # Delay for 0.8 seconds
-echo "Under GNU General Public License 3.0" # Print License
+echo "GNU-General Public License 3.0" # Print License
 sleep 1 # Delay for 1 seconds
 echo -e "Brought by Citra-Standalone\n"
 sleep 0.5
