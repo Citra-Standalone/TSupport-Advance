@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# Official TSupport-Advance 
+# Official TSupport-Advance
 
 # Set directory variable
 TARGET_DIR="/data/adb/tricky_store"
