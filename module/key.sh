@@ -1,5 +1,7 @@
 #!/system/bin/sh
 
+# Official TSupport-Advance
+
 # Indicator
 echo -e "\n=== CIT Keybox Retriever ==="
 
