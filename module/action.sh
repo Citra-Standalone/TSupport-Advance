@@ -1,5 +1,7 @@
 #!/system/bin/sh
 
+# Official TSupport-Advance
+
 # Displaying a message regarding TSupport and Shamiko support
 echo "TSupport | Shamiko Support"
 
