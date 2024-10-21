@@ -13,15 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Get commit number
-        id: commit_number
-        run: echo "::set-output name=number::$(git rev-parse HEAD)"
-
-      - name: Compress module folder to zip
-        run: zip -r TSP-A.zip module
-
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: TSupport-Advance (${{ steps.commit_number.outputs.number }})
+          name: TSupport-Advance${{ github.run_number }}
           path: module/**
