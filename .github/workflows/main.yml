@@ -7,9 +7,9 @@ on:
 
 jobs:
   module_compressor:
-    runs: 
-      using: 'node20'
-      main: 'main.js'
+    runs-on: 
+        using: 'node20'
+        main: 'main.js'
 
     steps:
       - name: Checkout code
