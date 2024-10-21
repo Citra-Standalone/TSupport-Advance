@@ -1,4 +1,4 @@
-name: Zip Module
+name: Module Compressor
 
 on:
   push:
