@@ -1,3 +1,3 @@
 # Citra-Standalone ( CIT )
 - Love to code🥰
-- Noob Coders
+- Citra is Noob Coders💀
