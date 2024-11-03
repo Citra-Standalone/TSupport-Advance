@@ -30,7 +30,7 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 
 ## Acknowledgements
 
-This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)). I acknowledge that the original authors and contributors have created valuable work, and I encourage users to respect the licensing terms of the original project.
+This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)).
 
 ## License
 
