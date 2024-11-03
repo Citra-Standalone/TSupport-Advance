@@ -27,6 +27,7 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 - PlayIntegrityFix
 
 ## LICENSE
+
 Open Source License
 
 Copyright © 2024 Citra-Standalone
