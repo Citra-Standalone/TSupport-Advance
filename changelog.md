@@ -21,6 +21,7 @@ spoofProvider - Set to False/No if youre using PlayIntegrityFix Fork
 
 spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 </details>
+
 ## Requirements
 
 - Magisk/KernelSU/Apatch ( Recommended to use Magisk 27008+ )
