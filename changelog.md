@@ -4,7 +4,7 @@
 Changelog
 </summary>
 
-*R241104*
+**R241104**
 - Customization ( `exclude.txt` now be `customize.txt` )
 </details>
 
