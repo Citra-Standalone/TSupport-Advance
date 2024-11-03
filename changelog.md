@@ -1,10 +1,10 @@
-# TSupport-Advance ( R241104 )
-
+# TSupport-Advance 
 <details>
 <summary>
 Changelog
 </summary>
 
+( R241104 )
 - Customization ( `exclude.txt` now `customize.txt` )
 </details>
 ## License
