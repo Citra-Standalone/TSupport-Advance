@@ -26,34 +26,29 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 - Tricky Store
 - PlayIntegrityFix
 
+## Acknowledgements
+
+This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)). I acknowledge that the original authors and contributors have created valuable work, and I encourage users to respect the licensing terms of the original project.
+
 ## License
 
-Open Source License
+`Open Source License
 
 Copyright © 2024 Citra-Standalone
 
 This source code is open and available for anyone to use, modify, and redistribute under the following conditions:
 
-1. **Free Use**: Anyone is free to use, copy, or modify this source code for any purpose, whether commercial or non-commercial.
+1. Free Use: Anyone is free to use, copy, or modify this source code for any purpose, whether commercial or non-commercial.
 
-2. **Acknowledgment of Code Owners**: Users must include the names of the code owners listed in the directory in any form of distribution or usage of this code.
+2. Acknowledgment of Code Owners: Users must include the names of the code owners listed in the directory in any form of distribution or usage of this code.
 
-3. **Original License Inclusion**: Any modifications or redistribution must retain this original license.
+3. Original License Inclusion: Any modifications or redistribution must retain this original license.
 
-4. **No Warranty**: This code is provided "as is" without any warranty of any kind, express or implied, including but not limited to warranties of fitness for a particular purpose.
+4. No Warranty: This code is provided "as is" without any warranty of any kind, express or implied, including but not limited to warranties of fitness for a particular purpose.
 
-5. **No Liability**: The code owner(s) are not responsible or liable for any malicious or harmful use of this code.
+5. No Liability: The code owner(s) are not responsible or liable for any malicious or harmful use of this code.
 
-By using this code, you agree to the terms of this license.
-
-
-### Acknowledgement
-
-- osm0sis ( PlayIntegrityFix-Fork AutoPif )
-
-## Acknowledgements
-
-This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)). I acknowledge that the original authors and contributors have created valuable work, and I encourage users to respect the licensing terms of the original project.
+By using this code, you agree to the terms of this license.`
 
 ---
 
