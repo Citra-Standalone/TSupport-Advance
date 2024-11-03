@@ -4,9 +4,10 @@
 Changelog
 </summary>
 
-( R241104 )
+R241104
 - Customization ( `exclude.txt` now `customize.txt` )
 </details>
+
 ## License
 
 ```
