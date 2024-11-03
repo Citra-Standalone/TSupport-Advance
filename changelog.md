@@ -37,19 +37,19 @@ Open Source License
 
 Copyright © 2024 Citra-Standalone
 
-This source code is open and available for anyone to use, modify, and redistribute under the following conditions:
+This code is open for free use, modification, and redistribution under these terms:
 
-Free Use: Anyone is free to use, copy, or modify this source code for any purpose, whether commercial or non-commercial.
+Free to use, modify, or share for any purpose, whether commercial or non-commercial.
 
-Acknowledgment of Code Owners: Users must include the names of the code owners listed in the directory in any form of distribution or usage of this code.
+Credit original authors in any form of distribution or usage.
 
-Original License Inclusion: Any modifications or redistribution must retain this original license.
+Retain this license in any modified or redistributed versions.
 
-No Warranty: This code is provided "as is" without any warranty of any kind, express or implied, including but not limited to warranties of fitness for a particular purpose.
+Provided “as is,” without any warranty.
 
-No Liability: The code owner(s) are not responsible or liable for any malicious or harmful use of this code.
+Authors are not liable for any misuse.
 
-By using this code, you agree to the terms of this license.
+Using this code means you agree to these terms.
 ```
 
 ---
