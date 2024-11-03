@@ -1,10 +1,11 @@
 # TSupport-Advance ( TSP-A )
-
+<details>
 This is magisk module DO NOT FLASH FROM RECOVERY!
 
 Merge version of TSupport and CITadvance. Might lose some feature from TSupport but its not a problem the main objective is working better than TSupport or CITadvance.
 
 This module support for older and newer version of Magisk/KSU/APATCH. `Action button` only available for Magisk 27008+ so dont ask me why there is no `Action button`.
+</details>
 
 ## Installation
 
@@ -19,13 +20,12 @@ By default it will be auto mode. You can add `customize.txt` to Internal Storage
 spoofProvider - Set to False/No if youre using PlayIntegrityFix Fork
 
 spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
-
+</details>
 ## Requirements
 
 - Magisk/KernelSU/Apatch ( Recommended to use Magisk 27008+ )
 - Tricky Store
 - PlayIntegrityFix
-</details>
 
 ## Acknowledgements
 
