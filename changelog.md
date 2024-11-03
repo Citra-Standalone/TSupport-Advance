@@ -8,7 +8,7 @@ This module support for older and newer version of Magisk/KSU/APATCH. `Action bu
 
 ## Installation
 
-Install from Magisk/KernelSU/Apatch Manager.
+<details> Install from Magisk/KernelSU/Apatch Manager.
 
 About PIF Generator configuration, you can hold your screen for a second and it will automatically set to default settings. Useful if your VOL+ and VOL- having issue. ( Its time to buy new phone! )
 
@@ -25,7 +25,7 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 - Magisk/KernelSU/Apatch ( Recommended to use Magisk 27008+ )
 - Tricky Store
 - PlayIntegrityFix
-
+</details>
 ## Acknowledgements
 
 This repository incorporates code from the osm0sis project ([PlayIntegrityFork](https://github.com/osm0sis/PlayIntegrityFork)). I acknowledge that the original authors and contributors have created valuable work, and I encourage users to respect the licensing terms of the original project.
