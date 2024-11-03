@@ -6,7 +6,7 @@ Changelog
 Changelogs :
 
 - R241104
- - Customization ( `exclude.txt` now `customize.txt` )
+  - Customization ( `exclude.txt` now `customize.txt` )
 </details>
 
 ## License
