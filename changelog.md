@@ -39,15 +39,15 @@ Copyright © 2024 Citra-Standalone
 
 This source code is open and available for anyone to use, modify, and redistribute under the following conditions:
 
-1. Free Use: Anyone is free to use, copy, or modify this source code for any purpose, whether commercial or non-commercial.
+Free Use: Anyone is free to use, copy, or modify this source code for any purpose, whether commercial or non-commercial.
 
-2. Acknowledgment of Code Owners: Users must include the names of the code owners listed in the directory in any form of distribution or usage of this code.
+Acknowledgment of Code Owners: Users must include the names of the code owners listed in the directory in any form of distribution or usage of this code.
 
-3. Original License Inclusion: Any modifications or redistribution must retain this original license.
+Original License Inclusion: Any modifications or redistribution must retain this original license.
 
-4. No Warranty: This code is provided "as is" without any warranty of any kind, express or implied, including but not limited to warranties of fitness for a particular purpose.
+No Warranty: This code is provided "as is" without any warranty of any kind, express or implied, including but not limited to warranties of fitness for a particular purpose.
 
-5. No Liability: The code owner(s) are not responsible or liable for any malicious or harmful use of this code.
+No Liability: The code owner(s) are not responsible or liable for any malicious or harmful use of this code.
 
 By using this code, you agree to the terms of this license.
 ```
