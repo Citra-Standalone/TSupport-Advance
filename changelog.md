@@ -26,7 +26,7 @@ spoofSignature - Set to True/Yes if your ROM Sign is Testkey.
 - Tricky Store
 - PlayIntegrityFix
 
-## LICENSE
+## License
 
 Open Source License
 
