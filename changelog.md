@@ -32,5 +32,5 @@ This repository incorporates code from the osm0sis project ([PlayIntegrityFork](
 
 ---
 
-# TSP-A Changelog ( R241104 )
+## Changelog ( R241104 )
 - Customization ( `exclude.txt` now `customize.txt` )
