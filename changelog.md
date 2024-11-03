@@ -32,7 +32,7 @@ This repository incorporates code from the osm0sis project ([PlayIntegrityFork](
 
 ## License
 
-`Open Source License
+```Open Source License
 
 Copyright © 2024 Citra-Standalone
 
@@ -48,7 +48,7 @@ This source code is open and available for anyone to use, modify, and redistribu
 
 5. No Liability: The code owner(s) are not responsible or liable for any malicious or harmful use of this code.
 
-By using this code, you agree to the terms of this license.`
+By using this code, you agree to the terms of this license.```
 
 ---
 
