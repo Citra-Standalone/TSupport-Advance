@@ -1,5 +1,5 @@
 # TSupport-Advance ( R241105 )
-- Customization ( `exclude.txt` now be `customize.txt` )
+- Fixing the shamiko
 
 ## License
 
