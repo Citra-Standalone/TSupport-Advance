@@ -1,5 +1,5 @@
-# TSupport-Advance ( R241105 )
-- Fixing the shamiko
+# TSupport-Advance ( R241113 )
+- Default Key is AOSP
 
 ## License
 
