@@ -1,5 +1,5 @@
-# TSupport-Advance ( R241113 )
-- Default Key is AOSP
+# TSupport-Advance ( R241123 )
+- Fix VerifiedBootHash Reset After Reboot ( customize.txt )
 
 ## License
 
