@@ -1,5 +1,5 @@
-# TSupport-Advance ( R241125 )
-- Fix VerifiedBootHash Reset After Reboot ( customize.txt )
+# TSupport-Advance ( R241126 )
+- Function to abort key change on Install/update
 
 ## License
 
