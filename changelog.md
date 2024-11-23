@@ -1,4 +1,4 @@
-# TSupport-Advance ( R241123 )
+# TSupport-Advance ( R241124 )
 - Fix VerifiedBootHash Reset After Reboot ( customize.txt )
 
 ## License
