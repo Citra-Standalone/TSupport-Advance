@@ -1,5 +1,6 @@
-# TSupport-Advance ( R241126 )
+# TSupport-Advance ( R241127 )
 - Function to abort key change on Install/update
+- Bug Fixes
 
 ## License
 
