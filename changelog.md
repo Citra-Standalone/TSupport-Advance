@@ -1,5 +1,6 @@
-# TSupport-Advance ( R241207 )
+# TSupport-Advance ( R241209 )
 - Bug Fixes
+- Add New Indicator ( SELinux )
 
 ## License
 
