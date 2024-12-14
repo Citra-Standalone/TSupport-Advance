@@ -1,6 +1,5 @@
-# TSupport-Advance ( R241211 )
-- Bug Fixes
-- Add New Indicator ( SELinux )
+# TSupport-Advance ( R241214 )
+- Bug Fixes ( Shamiko )
 
 ## License
 
