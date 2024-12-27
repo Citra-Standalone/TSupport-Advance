@@ -1,2 +1,1 @@
-# Citra-Standalone ( CIT )
-- Bad Dev Here😈
+Moonlight shines the lake, unveiling a path for the brave to advance.
