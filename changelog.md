@@ -1,5 +1,5 @@
 # TSupport-Advance ( R250102 )
-- Bug Fixes
+- Add PixelProps PIF/GMS Disabler
 
 ## License
 
