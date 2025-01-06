@@ -1,5 +1,5 @@
 # TSupport-Advance ( R250106 )
-- Remove PixelProps Settings
+- Bug Fixes
 
 ## License
 
