@@ -1,6 +1,5 @@
-# TSupport-Advance ( R250104 )
-- Add PixelProps PIF/GMS Disabler
-- Fix Advance Setup for PIF Fork
+# TSupport-Advance ( R250106 )
+- Remove PixelProps Settings
 
 ## License
 
