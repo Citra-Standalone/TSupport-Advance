@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250106 )
-- Bug Fixes
+# TSupport-Advance ( R250110 )
+- Fingerprint Improvement
 
 ## License
 
