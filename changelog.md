@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250112 )
-- Bug Fixes
+# TSupport-Advance ( R250115 )
+- Fix Conflict with Tricky Store Addon
 
 ## License
 
