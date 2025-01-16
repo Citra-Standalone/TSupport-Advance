@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250115 )
-- Fix Conflict with Tricky Addon
+# TSupport-Advance ( R250116 )
+- Add Rules
 
 ## License
 
