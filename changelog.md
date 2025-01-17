@@ -1,5 +1,5 @@
 # TSupport-Advance ( R250117 )
-- Add ROM spoof disabler.
+- Disable ROM Spoof
 
 ## License
 
