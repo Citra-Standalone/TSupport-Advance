@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250116 )
-- New Box Format
+# TSupport-Advance ( R250117 )
+- Add ROM spoof disabler.
 
 ## License
 
