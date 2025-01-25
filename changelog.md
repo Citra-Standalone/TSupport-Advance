@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250117 )
-- Disable ROM Spoof
+# TSupport-Advance ( R250125 )
+- Adding important package to target.txt
 
 ## License
 
