@@ -1,6 +1,5 @@
-# TSupport-Advance ( R250126 )
-- Adding important package to target.txt
-- Fix F-Print updater
+# TSupport-Advance ( R250127 )
+- Migration
 
 ## License
 
