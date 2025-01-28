@@ -1,6 +1,6 @@
 # TSupport-Advance ( R250129 )
 - Migration ( Big Update ) Old version droped!
-- Improvement ( Boost Speed )
+- Improvement ( Boost Validating Speed )
 
 ## License
 
