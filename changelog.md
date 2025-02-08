@@ -1,7 +1,5 @@
-# TSupport-Advance ( R250131 )
-- Migration ( Big Update ) Old version droped!
-- Improvement ( Boost Validating Speed )
-- Fixing Box Retriever 
+# TSupport-Advance ( R250208 )
+- Adapt with TrickyStore
 
 ## License
 
