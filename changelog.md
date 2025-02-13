@@ -1,4 +1,5 @@
 # TSupport-Advance ( R250213 )
+- Everything run with ( su )
 
 ## License
 
