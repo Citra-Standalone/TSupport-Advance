@@ -1,5 +1,4 @@
-# TSupport-Advance ( R250209 )
-- Adapt with TrickyStore
+# TSupport-Advance ( R250213 )
 
 ## License
 
