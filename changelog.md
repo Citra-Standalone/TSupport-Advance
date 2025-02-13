@@ -1,5 +1,5 @@
 # TSupport-Advance ( R250213 )
-- Everything run with ( su )
+- Every wget run with su
 
 ## License
 
