@@ -1,5 +1,5 @@
 # TSupport-Advance ( R250213 )
-- Every wget run with su
+- Big Changes ( New Variants of BBox Receiver )
 
 ## License
 
