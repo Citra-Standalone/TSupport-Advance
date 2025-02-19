@@ -1,5 +1,6 @@
-# TSupport-Advance ( R250219 )
+# TSupport-Advance ( R250220 )
 - Big Changes ( New Variants of BBox Receiver )
+- Fix Fprint Updater
 
 ## License
 
