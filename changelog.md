@@ -1,6 +1,5 @@
-# TSupport-Advance ( R250220 )
-- Big Changes ( New Variants of BBox Receiver )
-- Fix Fprint Updater
+# TSupport-Advance ( R250304 )
+- Fix fingerprint
 
 ## License
 
