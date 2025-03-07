@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250304 )
-- Fix fingerprint
+# TSupport-Advance ( R250307 )
+- New fingerprint code
 
 ## License
 
