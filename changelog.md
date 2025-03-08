@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250307 )
-- New fingerprint code
+# TSupport-Advance ( R250308 )
+- Curl Fallback
 
 ## License
 
