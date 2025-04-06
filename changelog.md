@@ -19,5 +19,5 @@ Using this code means you agree to these terms.
 ```
 
 ```
-"For the BRAVE to Advance.🍻"
+For the BRAVE to Advance.🍻
 ```
