@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250406 )
-- Key Format
+# TSupport-Advance ( R250518 )
+- Fix Magisk Alpha Issue
 
 ## License
 
