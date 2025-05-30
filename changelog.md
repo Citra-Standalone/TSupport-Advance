@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250518 )
-- Fix Magisk Alpha Issue
+# TSupport-Advance ( R250530 )
+- Auto remove BootloaderSpoofer 
 
 ## License
 
