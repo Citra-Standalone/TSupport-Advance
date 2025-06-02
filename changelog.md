@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250530 )
-- Auto remove BootloaderSpoofer 
+# TSupport-Advance ( R250602 )
+- Feature to disable customize.txt 
 
 ## License
 
