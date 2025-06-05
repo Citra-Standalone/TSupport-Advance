@@ -1,5 +1,5 @@
 # TSupport-Advance ( R250606 )
-- Fix fp.sh missmatch model & product lenght 
+- Fix fp.sh missmatch model & product length
 
 ## License
 
