@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250602 )
-- Feature to disable customize.txt 
+# TSupport-Advance ( R250604 )
+- Fix fp.sh missmatch model & product lenght 
 
 ## License
 
