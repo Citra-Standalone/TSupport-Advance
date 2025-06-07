@@ -1,5 +1,5 @@
-# TSupport-Advance ( R250606 )
-- Fix fp.sh missmatch model & product length
+# TSupport-Advance ( R250607 )
+- Bring back the old PIF Fork support
 
 ## License
 
