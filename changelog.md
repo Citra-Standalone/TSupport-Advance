@@ -2,8 +2,8 @@
 - Fix fp.sh
 
 ## Please Support me ☕
-- [Complete the Download Task](https://upfiles.com/kdkkd)
-- [Buymeacoffee](https://coff.ee/citra_standalone)
+- [📁Complete the Download Task](https://upfiles.com/kdkkd)
+- [☕Buymeacoffee](https://coff.ee/citra_standalone)
 
 ## License
 
