@@ -2,7 +2,7 @@
 - Fix fp.sh
 
 ## Support Me
-- [UpFiles Download](https://upfiles.com/Xc2D2CH)
+- [Download (PPD)](https://upfiles.com/Xc2D2CH)
 
 ## License
 
