@@ -1,8 +1,8 @@
 # TSupport-Advance ( R250611 )
 - Fix fp.sh
 
-## Support
-[📥 Download & Support (PPD)](https://upfiles.com/Xc2D2CH)
+## Download n' Support Me
+[📥 Download (PPD)](https://upfiles.com/Xc2D2CH)
 
 ## License
 
