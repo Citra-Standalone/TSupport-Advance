@@ -1,7 +1,7 @@
 ## TSupport-Advance ( R250611 )
 - Fix fp.sh
 
-## Support Me ☕
+## Support me ☕
 - [Download (PPD)](https://upfiles.com/Xc2D2CH)
 
 ## License
