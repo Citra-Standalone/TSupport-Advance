@@ -3,6 +3,7 @@
 
 ## Please Support me ☕
 - [Complete the Download Task](https://upfiles.com/kdkkd)
+- [Buymeacoffee](https://coff.ee/citra_standalone)
 
 ## License
 
