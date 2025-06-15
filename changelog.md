@@ -2,7 +2,7 @@
 - Fix fp.sh
 
 ## Please Support me ☕
-- [Download This File](https://upfiles.com/kdkkd)
+- [Complete the Download Task](https://upfiles.com/kdkkd)
 
 ## License
 
