@@ -1,5 +1,5 @@
-## TSupport-Advance ( R250615 )
-- Fix fp.sh
+## TSupport-Advance ( R250622 )
+- Remove shamiko action feature
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
