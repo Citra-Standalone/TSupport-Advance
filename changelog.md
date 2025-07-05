@@ -1,4 +1,4 @@
-## TSupport-Advance ( R250705 )
+## TSupport-Advance ( R250706 )
 - Updates code to flexible core.
 
 ## Please Support me ☕
