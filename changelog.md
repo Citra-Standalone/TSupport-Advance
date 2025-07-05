@@ -1,5 +1,5 @@
-## TSupport-Advance ( R250703 )
-- Add new package in customize.txt ( please delete older customzie.txt )
+## TSupport-Advance ( R250705 )
+- Updates code to flexible code.
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
