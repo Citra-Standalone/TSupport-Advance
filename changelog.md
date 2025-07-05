@@ -1,5 +1,5 @@
 ## TSupport-Advance ( R250705 )
-- Updates code to flexible code.
+- Updates code to flexible core.
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
