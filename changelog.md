@@ -1,5 +1,5 @@
 ## TSupport-Advance ( R250707 )
-- Updates code to flexible core.
+- Fix Code FP Core
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
