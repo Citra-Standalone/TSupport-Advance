@@ -1,5 +1,5 @@
 ## TSupport-Advance ( R250711 )
-- Update fp sh ( PIF KOWX712 Compatible )
+- Update core ( PIF KOWX712 Compatible )
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
