@@ -1,4 +1,4 @@
-## TSupport-Advance ( R250711 )
+## TSupport-Advance ( R250715 )
 - Update core ( PIF KOWX712 Compatible )
 
 ## Please Support me ☕
