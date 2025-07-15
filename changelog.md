@@ -1,5 +1,5 @@
 ## TSupport-Advance ( R250715 )
-- Update core ( PIF KOWX712 Compatible )
+- Update core ( Box Retriever)
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
