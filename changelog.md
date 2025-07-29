@@ -1,5 +1,6 @@
-## TSupport-Advance ( R250729 )
+## TSupport-Advance ( R250730 )
 - Reduce Size
+- Bug Fixes
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
