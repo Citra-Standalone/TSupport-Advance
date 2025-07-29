@@ -1,5 +1,5 @@
-## TSupport-Advance ( R250724 )
-- Update core ( Box Retriever)
+## TSupport-Advance ( R250729 )
+- Reduce Size
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
