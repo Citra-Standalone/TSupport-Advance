@@ -1,5 +1,6 @@
 ## TSupport-Advance ( R250811 )
 - HMA & HMAL support
+- Automatic disable waenhancer bootloaderspoofer
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
