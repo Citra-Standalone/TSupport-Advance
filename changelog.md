@@ -1,6 +1,5 @@
-## TSupport-Advance ( R250730 )
-- Reduce Size
-- Bug Fixes
+## TSupport-Advance ( R250810 )
+- HMA support
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
