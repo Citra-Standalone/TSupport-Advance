@@ -1,5 +1,5 @@
 ## TSupport-Advance ( R250811 )
-- HMA & HMAL support
+- Update Code Structure
 - Automatic disable waenhancer bootloaderspoofer
 
 ## Please Support me ☕
