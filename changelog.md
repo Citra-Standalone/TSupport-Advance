@@ -1,8 +1,5 @@
-## TSupport-Advance ( R250817 )
-- Update Code Structure
-- Automatic disable waenhancer bootloaderspoofer
-- Fix target.sh
-- Update env.sh
+## TSupport-Advance ( R250916 )
+- Add New Automation Setup.
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
