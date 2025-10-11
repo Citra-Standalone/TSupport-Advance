@@ -1,5 +1,5 @@
-## TSupport-Advance ( R250917 )
-- Add New Automation Setup.
+## TSupport-Advance ( R251011 )
+- Fix Force Mode.
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
