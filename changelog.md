@@ -1,5 +1,5 @@
-## TSupport-Advance ( R251011 )
-- Fix Force Mode.
+## TSupport-Advance ( R251029 )
+- Built-in PIF props.
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
