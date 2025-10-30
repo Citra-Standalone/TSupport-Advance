@@ -9,18 +9,13 @@
 ## License
 
 ```
-Open Source License
-
 Copyright © 2024 Citra-Standalone
 
-This code is open for free use, modification, and redistribution under these terms:
+This software is provided under the following terms. By using, copying, or modifying this code, you are deemed to have read and agreed to all terms in this license.
 
-Free to use, modify, or share for any purpose, whether commercial or non-commercial.
-Credit original authors in any form of distribution or usage.
-Retain this license in any modified or redistributed versions.
-Provided “as is,” without any warranty. Authors are not liable for any misuse.
+You are free to use and modify this code for personal purposes, whether commercial or non-commercial. However, you are strictly prohibited from releasing, distributing, or publishing any edited or modified versions of this code to the public in any form. All modifications must remain for private use only.
 
-Using this code means you agree to these terms.
+The original code and its copyright are held by Citra-Standalone. Some parts of this code were inspired by other well-known modules. For a full list of contributors and inspirations, please refer to the credits.txt file included in this distribution.This software is provided "as is," without warranty of any kind, either express or implied. The authors shall not be held liable for any damages or liabilities arising from the use or misuse of this software.
 ```
 ```
 For the BRAVE to Advance.🍻
