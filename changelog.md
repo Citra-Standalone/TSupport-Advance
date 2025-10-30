@@ -1,5 +1,6 @@
-## TSupport-Advance ( R251029 )
+## TSupport-Advance ( R251030 )
 - Built-in PIF props.
+- Add Compatibility for HMAOSS
 
 ## Please Support me ☕
 - [📁Complete the Download Task](https://upfiles.com/kdkkd)
