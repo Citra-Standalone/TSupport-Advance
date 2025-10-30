@@ -13,10 +13,10 @@ Copyright © 2024 Citra-Standalone
 
 This software is provided "as is" without warranty.
 You are free to use and modify this code for any personal purpose, commercial or non-commercial.
-However, you are **strictly prohibited** from publicly distributing any modified versions.
+However, you are `strictly prohibited` from publicly distributing any modified versions.
 
 The original code is owned by Citra-Standalone.
-For attribution and inspirations, see the credits.txt file.
+For attribution and inspirations, see the `credits.txt` file.
 
 By using this code, you agree to these terms.
 ```
