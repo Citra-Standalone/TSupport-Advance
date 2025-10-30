@@ -17,7 +17,6 @@ However, you are `strictly prohibited` from publicly distributing any modified v
 
 The original code is owned by Citra-Standalone.
 For attribution and inspirations, see the `credits.txt` file.
-
 By using this code, you agree to these terms.
 ```
 ```
