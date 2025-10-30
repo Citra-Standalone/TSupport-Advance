@@ -11,12 +11,13 @@
 ```
 Copyright © 2024 Citra-Standalone
 
-This software is provided "as is" without warranty.
-You are free to use and modify this code for any personal purpose, commercial or non-commercial.
-However, you are `strictly prohibited` from publicly distributing any modified versions.
+This license grants you the right to use and modify this code for your own individual use only.
+This permission is exclusive to you and non-transferable.
 
-The original code is owned by Citra-Standalone.
-For attribution and inspirations, see the `credits.txt` file.
+Any form of sharing, distribution, or resale of this code, in its original or any modified form, is strictly prohibited.
+
+This software is provided "as is" without warranty.
+The original code is owned by Citra-Standalone (see credits.txt for attribution).
 By using this code, you agree to these terms.
 ```
 ```
