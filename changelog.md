@@ -2,7 +2,7 @@
 - Built-in PIF props.
 - Add Compatibility for HMAOSS
 
-## Please Support me ☕
+## Support me ☕
 - [☕Buymeacoffee](https://coff.ee/citra_standalone)
 
 ## License
