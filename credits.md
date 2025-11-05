@@ -1,5 +1,5 @@
 # Telegram Channel
-📡 [Citra Integrity Trick] (https://t.me/citraintegritytrick)
+📡 [Citra Integrity Trick](https://t.me/citraintegritytrick)
 
 # Acknowledgement
 - citra_standalone ( TSupport, CITadvance )
