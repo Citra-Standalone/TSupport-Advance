@@ -1,6 +1,7 @@
 ## TSupport-Advance ( R251105 )
 - Built-in PIF props.
 - Add Compatibility for HMAOSS
+- Compatibility with TEESimulator
 
 ## Support me ☕
 - [☕Buymeacoffee](https://coff.ee/citra_standalone)
