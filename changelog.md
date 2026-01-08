@@ -1,11 +1,11 @@
 ## TSupport-Advance ( R260108 )
 <details>
-<summary>Added/New</summary>
+<summary>New Added</summary>
 - kpm.sh : ( Kernel Patch Next ) auto config for some google app.
 </details>
 
 <details>
-<summary>Update/Changes</summary>
+<summary>Update Changes</summary>
 - hma.sh : ( Update TSupport-Advance Template for HMA-OSS ) set spoof installation source to true for app listed in `hma.txt`. This will spoof all app as installed from Playstore, this fix UNKNOWN INSTALLED.
 </details>
 
