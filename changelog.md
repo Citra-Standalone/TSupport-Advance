@@ -30,6 +30,6 @@ By using this code, you agree to these terms.
 ```
 For the BRAVE to Advance.🍻
 ```
-
+---
 ## Credits
 [Read Here](https://github.com/Citra-Standalone/Citra-Standalone/blob/main/credits.md)
