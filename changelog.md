@@ -1,9 +1,10 @@
 ## TSupport-Advance ( R260108 )
 New added:
-- kpm.sh : ( Kernel Patch Next ) auto config for some google app.
+- suspicous_props.sh : Detection and fixing solution ( Sometimes reset device props configuration to default )
+- trace_cleaner.sh : Remove LSposed odex trace
 
 Update changes:
-- hma.sh : ( Update TSupport-Advance Template for HMA-OSS ) set spoof installation source to true for app listed in `hma.txt`. This will spoof all app as installed from Playstore, this fix *UNKNOWN INSTALLED*.
+- fp.sh : removed this script/function.
 
 ---
 ## Support me ☕
