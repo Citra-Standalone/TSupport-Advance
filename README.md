@@ -23,5 +23,6 @@ This is magisk module by citra-standalone for passing attestation and DroidGuard
 
 # Acknowledgement
 
-- TSupport, CITadvance - citra-standalone - [PlayIntegrityFix](https://github.com/chiteroman/PlayIntegrityFix) - chiteroman
+- TSupport, CITadvance - citra-standalone
+- [PlayIntegrityFix](https://github.com/chiteroman/PlayIntegrityFix) - chiteroman
 - [Specter](http://github.com/dpejoh/specter) VBMeta - dpejoh
