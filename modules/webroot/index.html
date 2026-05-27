@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TSA</title>
+
+<link rel="stylesheet" type="text/css" href="/internal/insets.css" />
+  <script type="module" crossorigin src="/assets/index-m9j_Rr_1.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BzDmNTol.css">
+</head>
+
+<body>
+
+<div class="scroll-wrapper">
+
+    <section class="page" id="page-info">
+
+        <div class="module-info">
+            <span class="module-name">TSupport-Advance</span>
+            <span class="module-description" id="module-description">Moonlight shines the lake, unveiling a path for the brave to advance.🌙</span>
+        </div>
+
+        <div class="info-section">
+            <span>DEVICE INFO</span>
+        </div>
+        
+        <div class="info-card hidden-box" id="warning-box">
+            <span class="info-title" style="color: #ff4444;">⚠️ WARNING</span>
+            <span class="info-value" style="color: #ffaa00;">Found suspicous props.</span>
+        </div>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <span class="info-title">ROOT</span>
+                <span class="info-value" id="rootMode">Magisk</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-title">TSAVersion</span>
+                <span class="info-value" id="tsp-version">R260507</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-title">ROM Sign</span>
+                <span class="info-value" id="rom-sign">Unknown</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-title">SELinux</span>
+                <span class="info-value" id="selinux-status">Unknown</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-title">TEE Status</span>
+                <span class="info-value" id="tee-status">Unknown</span>
+            </div>
+
+            <div class="info-card">
+                <span class="info-title">HMA</span>
+                <span class="info-value" id="hma-status">Unknown</span>
+            </div>
+
+        </div>
+        
+    </section>
+
+    <section class="page" id="page-tools">
+        <div class="tools-section">
+            <span>TOOLS</span>
+        </div>
+
+        <div class="container">
+
+            <div class="tool-card" id="btnTarget">
+                <div class="tool-title">Sync Target.txt</div>
+                <div class="tool-description">Update target configuration file.</div>
+            </div>
+
+            <div class="tool-card" id="btnKPM">
+                <div class="tool-title">Sync KPM</div>
+                <div class="tool-description">Refresh kernel patch module config.</div>
+            </div>
+
+            <div class="tool-card" id="btnHMA">
+                <div class="tool-title">Sync HMA</div>
+                <div class="tool-description">Update Hide My Applist templates & rules.</div>
+            </div>
+
+            <div class="tool-card" id="btnKeybox">
+                <div class="tool-title">Update Keybox</div>
+                <div class="tool-description">Fetch and install new keybox ( If Available ).</div>
+            </div>
+
+        </div>
+
+        <div class="output-section">
+            <span>OUTPUT</span>
+        </div>
+        
+        <div class="console-container">
+
+            <div class="console-title">
+                Output
+
+                <div class="top-right">
+                    <span id="status">IDLE</span>
+                    <button id="clearBtn">CLEAR</button>
+                </div>
+
+            </div>
+
+            <div class="console" id="console"></div>
+
+        </div>
+
+    </section>
+    <div id="web-bottom">END OF LINE</div>
+</div>
+
+<div id="popup-overlay" class="popup-overlay">
+    <div class="popup-box">
+        <div class="popup-title">⚠️ WARNING</div>
+        
+        <div class="popup-text">
+            <span id="text-original">
+                Removing suspicious props will help you pass DroidGuard, but it will DELETE all device props. The system will revert to its default ROM settings, which may cause your display and UI to appear unusually large.<br><br>
+                Are you SURE you want to continue?"
+            </span>
+            
+            <span id="text-loading" style="display: none; font-weight: bold;"></span>
+        </div>
+
+        <div class="popup-buttons">
+            <button id="btn-no" class="btn-no">NO</button>
+            <button id="btn-yes" class="btn-yes">YES</button>
+            <button id="btn-close" class="btn-no" style="display: none; width: 100%;">CLOSE</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
