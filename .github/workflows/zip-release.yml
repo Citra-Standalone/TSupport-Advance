@@ -42,7 +42,9 @@ jobs:
              --arg url "$ZIP_URL" \
              '.version = $ver | .versionCode = $vcode | .zipUrl = $url' \
              release.json > release.tmp && mv release.tmp release.json
-          
+
+          sed -i "s|^## TSupport-Advance (.*)|## TSupport-Advance ( $VERSION )|" changelog.md
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
