@@ -2,48 +2,49 @@
 
 # I am lazy to write this every time so automate it.
 
-# Function to handle Ctrl+C (SIGINT)
+# Function to handle errors/cleanup
 cleanup() {
-    echo -e "\n\n[!] Operation cancelled by user (Ctrl+C)."
-    echo "Cleaning up staging area..."
-    # 'git reset' unstages all files that were added
+    echo -e "\n\n[!] Operation cancelled or failed."
     git reset
-    echo "Staging area has been cleaned."
     exit 1
 }
-
-# Trap SIGINT (Ctrl+C) and call the cleanup function
 trap cleanup SIGINT
 
-# 1. Show status
+echo "Stashing local changes..."
+git stash push -m "Auto-stash before pull"
+
+# 2. Fetch & Pull
+echo "Fetching latest changes from GitHub..."
+git pull --rebase origin main
+
+echo "Restoring local changes..."
+git stash pop
+
+# 4. Status
 git status
 
-# 2. Ask for confirmation
+# 5. Confirm Add & Commit
 echo "-----------------------------------"
 read -p "Do you want to proceed with add & commit? (y/n) " confirmation
 
 if [[ $confirmation == "y" || $confirmation == "Y" ]]; then
-    # 3. Add all files
     git add .
     echo "Files added to staging."
 
-    # 4. Request commit message
     read -p "Enter your commit message: " user_input
-    
-    # Use default message if input is empty
     if [ -z "$user_input" ]; then
         user_input="Automatic update: $(TZ=UTC date)"
     fi
 
-    # 5. Commit and Push
     git commit -m "$user_input"
-    if git push; then
+    
+    echo "Pushing to GitHub..."
+    if git push origin main; then
         echo "Success! Changes have been pushed to GitHub."
     else
-        echo "Error: Push failed. Please check your SSH key or remote URL."
+        echo "Error: Push failed. Check your SSH/Network."
         exit 1
     fi
-    git pull --rebase origin main
 else
     echo "Process aborted."
 fi
