@@ -1,0 +1,41 @@
+name: Zip Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  zip-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Extract version and check duplication
+        run: |
+          VERSION=$(grep '^version=' modules/module.prop | cut -d'=' -f2)
+          TAG_NAME="$VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+          
+          if git ls-remote --tags origin | grep -q "refs/tags/$TAG_NAME$"; then
+            echo "DUPLICATE=true" >> $GITHUB_ENV
+            echo "Warning: Version $TAG_NAME already exist! Aborting process."
+          else
+            echo "DUPLICATE=false" >> $GITHUB_ENV
+          fi
+
+      - name: Zip specific folders
+        if: env.DUPLICATE == 'false'
+        run: zip -r TSupport-Advance-${{ env.VERSION }}.zip modules/
+
+      - name: Create Release
+        if: env.DUPLICATE == 'false'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          name: Release ${{ env.TAG_NAME }}
+          files: TSupport-Advance-${{ env.VERSION }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
