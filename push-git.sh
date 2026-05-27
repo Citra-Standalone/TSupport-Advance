@@ -42,8 +42,7 @@ if [[ $confirmation == "y" || $confirmation == "Y" ]]; then
     if git push origin main; then
         echo "Success! Changes have been pushed to GitHub."
         echo "Pulling latest changes from GitHub to stay in sync..."
-        sleep 5
-        git pull --rebase origin main
+        sleep 15 && git pull --rebase origin main
     else
         echo "Error: Push failed. Check your SSH/Network."
         exit 1
