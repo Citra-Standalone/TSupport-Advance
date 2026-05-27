@@ -43,6 +43,7 @@ if [[ $confirmation == "y" || $confirmation == "Y" ]]; then
         echo "Error: Push failed. Please check your SSH key or remote URL."
         exit 1
     fi
+    git pull --rebase origin main
 else
     echo "Process aborted."
 fi
