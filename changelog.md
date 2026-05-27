@@ -1,4 +1,4 @@
-## TSupport-Advance ( R260523 )
+## TSupport-Advance ( R260527 )
 Update changes:
 - Renew VBMeta Fixer
 
