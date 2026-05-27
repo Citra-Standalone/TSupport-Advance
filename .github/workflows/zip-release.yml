@@ -58,7 +58,7 @@ jobs:
 
       - name: Zip specific folders
         if: env.DUPLICATE == 'false'
-        run: zip -r TSupport-Advance-${{ env.VERSION }}.zip modules/
+        run: cd modules && zip -r TSupport-Advance-${{ env.VERSION }}.zip *
         
       - name: Create Release
         if: env.DUPLICATE == 'false'
