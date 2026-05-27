@@ -37,9 +37,8 @@ jobs:
           
           ZIP_URL="https://github.com/Citra-Standalone/TSupport-Advance/releases/latest/download/TSupport-Advance-$VERSION.zip"
           
-          # Kemas kini JSON (menggunakan sed untuk menukar nilai)
+          sed -i "s|\"versionCode\": \".*\"|\"versionCode\": \$VERSION_CODE|" release.json
           sed -i "s|\"version\": \".*\"|\"version\": \"$VERSION\"|" release.json
-          sed -i "s|\"versionCode\": \".*\"|\"versionCode\": \"$VERSION_CODE\"|" release.json
           sed -i "s|\"zipUrl\": \".*\"|\"zipUrl\": \"$ZIP_URL\"|" release.json
           
           git config user.name "github-actions[bot]"
