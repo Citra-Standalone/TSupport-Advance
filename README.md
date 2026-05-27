@@ -4,6 +4,12 @@
 
 This is magisk module by citra-standalone for passing attestation and DroidGuard, focusing on Stock ROM environments.
 
+# Support me ☕
+
+- [☕Buymeacoffee](https://coff.ee/citra_standalone)
+- [☕Ko-fi](https://ko-fi.com/citra_standalone)
+- $BTC: `bc1qx3yzvrz7whsdr4hhxgrl73rshv9y2nl2wut2nc` ( Hold & Copy )
+
 # Usage & Terms
 
 <div style="color:red; white-space: pre-wrap; word-wrap: break-word;">
@@ -14,11 +20,6 @@ This is magisk module by citra-standalone for passing attestation and DroidGuard
   
   ALL RISKS ARE SOLELY ASSUMED BY THE USER WITHOUT EXCEPTION. THIS INCLUDES PERMANENT BANS, ACCOUNT SUSPENSION, DEVICE OR IP BLACKLISTING, DATA LOSS, SYSTEM DAMAGE, APPLICATION FAILURE, AND EVEN POSSIBLE LEGAL ACTION FROM RELEVANT AUTHORITIES OR PLATFORM OWNERS.
 </div>
-
-# Support me ☕
-- [☕Buymeacoffee](https://coff.ee/citra_standalone)
-- [☕Ko-fi](https://ko-fi.com/citra_standalone)
-- $BTC: `bc1qx3yzvrz7whsdr4hhxgrl73rshv9y2nl2wut2nc` ( Hold & Copy )
 
 # Acknowledgement
 
