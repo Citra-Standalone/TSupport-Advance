@@ -29,16 +29,36 @@ jobs:
             echo "DUPLICATE=false" >> $GITHUB_ENV
           fi
 
+      - name: Update release.json
+        if: env.DUPLICATE == 'false'
+        run: |
+          VERSION=$(grep '^version=' modules/module.prop | cut -d'=' -f2)
+          VERSION_CODE=$(grep '^versionCode=' modules/module.prop | cut -d'=' -f2)
+          
+          ZIP_URL="https://github.com/Citra-Standalone/TSupport-Advance/releases/latest/download/TSupport-Advance-$VERSION.zip"
+          
+          # Kemas kini JSON (menggunakan sed untuk menukar nilai)
+          sed -i "s|\"version\": \".*\"|\"version\": \"$VERSION\"|" release.json
+          sed -i "s|\"versionCode\": \".*\"|\"versionCode\": \"$VERSION_CODE\"|" release.json
+          sed -i "s|\"zipUrl\": \".*\"|\"zipUrl\": \"$ZIP_URL\"|" release.json
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add release.json
+          git commit -m "chore: update release.json to version $VERSION"
+          git push
+
       - name: Zip specific folders
         if: env.DUPLICATE == 'false'
         run: zip -r TSupport-Advance-${{ env.VERSION }}.zip modules/
-
+        
       - name: Create Release
         if: env.DUPLICATE == 'false'
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.TAG_NAME }}
-          name: Release ${{ env.TAG_NAME }}
+          name: ${{ env.TAG_NAME }}
+          body_path: changelog.md
           files: TSupport-Advance-${{ env.VERSION }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
