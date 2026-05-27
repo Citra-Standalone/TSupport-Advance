@@ -6,7 +6,7 @@ This is magisk module by citra-standalone for passing attestation and DroidGuard
 
 # Usage & Terms
 
-<div style="white-space: pre-wrap; word-wrap: break-word;">
+<div style="color:red; white-space: pre-wrap; word-wrap: break-word;">
   
   THIS CODE IS STRICTLY FOR EXPERIMENTATION AND EDUCATIONAL PURPOSES ONLY. I HEREBY DISCLAIM ALL RESPONSIBILITY FOR ANY USE BEYOND THIS INTENDED PURPOSE.
   
