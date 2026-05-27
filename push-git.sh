@@ -33,7 +33,7 @@ if [[ $confirmation == "y" || $confirmation == "Y" ]]; then
 
     read -p "Enter your commit message: " user_input
     if [ -z "$user_input" ]; then
-        user_input="Automatic: $(date +%Y-%m-%d)"
+        user_input="Automatic update: $(date +%Y-%m-%d)"
     fi
 
     git commit -m "$user_input"

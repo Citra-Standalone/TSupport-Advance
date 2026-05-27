@@ -49,7 +49,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           if ! git diff --quiet; then
-            git add release.json
+            git add release.json changelog.md
             git commit -m "chore: update release.json to $VERSION ($VERSION_CODE)"
             git push
           else
