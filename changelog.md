@@ -15,5 +15,7 @@ Bitcoin:
 bc1qx3yzvrz7whsdr4hhxgrl73rshv9y2nl2wut2nc
 ```
 </details>
----
-[See Credits](https://github.com/Citra-Standalone/TSupport-Advance/blob/main/credits.md)
+
+## Credits
+
+[Read Here](https://github.com/Citra-Standalone/TSupport-Advance/blob/main/credits.md)
