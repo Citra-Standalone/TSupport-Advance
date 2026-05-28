@@ -1,3 +1,7 @@
+<!-- Hello there, looking for something ? -->
+<!-- Congratulation you found this Easter Egg! -->
+<!-- I love you guys, thanks for supporting me! -->
+
 <h1 align="center">
 TSupport-Advance
 </h1>
