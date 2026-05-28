@@ -4,8 +4,6 @@
 
 <div/>
 
---
-
 ## Acknowledgements
 
 Thank you to the following:
