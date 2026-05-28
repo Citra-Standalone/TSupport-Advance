@@ -62,10 +62,20 @@ jobs:
         
       - name: Prepare Release Body
         if: env.DUPLICATE == 'false'
+        shell: python
         run: |
-          cp changelog.md release_body.md
+          with open('changelog.md', 'r', encoding='utf-8') as f:
+              content = f.read()
           
-          perl -0777 -i -pe 's/## Support me.*?---/## Support me\n\n'$(sed ':a;N;$!ba;s/\n/\\n/g' supportme.md | sed "s/'/\\\\'/g")'/s' release_body.md
+          with open('supportme.md', 'r', encoding='utf-8') as f:
+              support_content = f.read()
+          
+          import re
+          
+          new_content = re.sub(r'## Support me.*?---', f'## Support me\n\n{support_content}', content, flags=re.DOTALL)
+          
+          with open('release_body.md', 'w', encoding='utf-8') as f:
+              f.write(new_content)
 
       - name: Create Release
         if: env.DUPLICATE == 'false'
