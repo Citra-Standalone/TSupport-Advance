@@ -72,7 +72,7 @@ jobs:
           
           import re
           
-          new_content = re.sub(r'## Support me.*?---', f'## Support me\n\n{support_content}', content, flags=re.DOTALL)
+          new_content = re.sub(r'## Support me.*?---', f'#{support_content}', content, flags=re.DOTALL)
           
           with open('release_body.md', 'w', encoding='utf-8') as f:
               f.write(new_content)
