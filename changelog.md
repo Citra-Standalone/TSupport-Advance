@@ -10,4 +10,4 @@ Update changes:
 
 ---
 ## Credits
-[Read Here](https://github.com/Citra-Standalone/Citra-Standalone/blob/main/credits.md)
+[Read Here](https://github.com/Citra-Standalone/TSupport-Advance/blob/main/credits.md)
