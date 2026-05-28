@@ -10,6 +10,8 @@ This is magisk module by citra-standalone for passing attestation and DroidGuard
 - [☕Ko-fi](https://ko-fi.com/citra_standalone)
 - $BTC: `bc1qx3yzvrz7whsdr4hhxgrl73rshv9y2nl2wut2nc` ( Hold & Copy )
 
+---
+
 # Usage & Terms
 
 <div style="color:red; white-space: pre-wrap; word-wrap: break-word;">
