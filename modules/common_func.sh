@@ -1,7 +1,9 @@
 #!/bin/sh
 
+# Copyright (c) Citra-Standalone
+# Licensed under GPLv3
 # This file may contain both original code and GPLv3-derived code.
-# GPLv3 sections remain under GPLv3 terms.
+# See GPLv3: https://www.gnu.org/licenses/gpl-3.0.html
 
 MODDIR="/data/adb/modules/tsupport-advance"
 CONF="/sdcard/TSupportConfig"
@@ -185,11 +187,14 @@ delete_target() {
 
 cleaner() {
     rm -rf "$CONF/temp"
-}
+} 
 
-# -------------------------- 
 
-#PIF Props Function
+# ========================
+#   PIF Props Function
+# ========================
+
+# ---- START ----
 
 # persistprop <prop name> <new value>
 persistprop() {
@@ -258,20 +263,13 @@ resetprop_if_match() {
     [[ "$(resetprop "$NAME")" = *"$CONTAINS"* ]] && $RESETPROP "$NAME" "$VALUE"
 }
 
-# stub for boot-time
-ui_print() { return; }
+# ---- ENDED ----
 
-sleep_pause() {
-    # APatch and KernelSU needs this
-    # but not KSU_NEXT, MMRL
-    if [ -z "$MMRL" ] && [ -z "$KSU_NEXT" ] && { [ "$KSU" = "true" ] || [ "$APATCH" = "true" ]; }; then
-        sleep 5
-    fi
-}
+# ========================
+#   Specter GPLv3 functions
+# ========================
 
-# ===== Specter GPLv3 functions =====
 # function : _val() emit_vbmeta() vbmeta_digest() set_vbhash()
-# See GPLv3: https://www.gnu.org/licenses/gpl-3.0.html
 
 # ---- START ----
 
