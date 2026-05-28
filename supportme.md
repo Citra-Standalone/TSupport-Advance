@@ -1,4 +1,4 @@
-# Support me
+## Support me
 
 <a href="https://www.buymeacoffee.com/citra_standalone">
 <img height='36' width="143" style='border:0px;height:36px;' src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" border="0" alt="Buy Me a Coffee" /></a>
@@ -14,3 +14,5 @@ Bitcoin:
 bc1qx3yzvrz7whsdr4hhxgrl73rshv9y2nl2wut2nc
 ```
 </details>
+
+---
