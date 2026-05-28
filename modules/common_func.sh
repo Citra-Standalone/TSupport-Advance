@@ -1,4 +1,12 @@
 #!/bin/sh
+
+# Portions of this file are derived from Specter project
+# Licensed under GNU GPLv3
+# See: https://www.gnu.org/licenses/gpl-3.0.html
+#
+# This file may contain both original code and GPLv3-derived code.
+# GPLv3 sections remain under GPLv3 terms.
+
 MODDIR="/data/adb/modules/tsupport-advance"
 CONF="/sdcard/TSupportConfig"
 TARGET_DIR="/data/adb/tricky_store"
@@ -265,10 +273,12 @@ sleep_pause() {
     fi
 }
 
-# Specter VBMeta Fixer
+# ===== Specter GPLv3 functions =====
+# function : _val() emit_vbmeta() vbmeta_digest() set_vbhash()
+# See GPLv3: https://www.gnu.org/licenses/gpl-3.0.html
+
 # ---- START ----
 
-# shellcheck shell=bash
 # Read big-endian integer (N bytes, default 8) from file at offset
 _val() {
   local _h
