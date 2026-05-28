@@ -3,7 +3,9 @@
 [![Telegram](https://img.shields.io/badge/Telegram-26A5E4.svg?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/CitraIntegrityTrick)
 
 <div/>
----
+
+--
+
 ## Acknowledgements
 
 Thank you to the following:
