@@ -9,19 +9,12 @@ TSupport-Advance
 <div align="center">
 
 Moonlight shines the lake, unveiling a path for the brave to advance.🌙
-<br />
 
-<a href="https://www.buymeacoffee.com/citra_standalone">
-<img height='36' width="143" style='border:0px;height:36px;' src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" border="0" alt="Buy Me a Coffee" /></a>
-
-<a href="https://ko-fi.com/V7V814RHYM">
-<img height='36' width="143" style='border:0px;height:36px;' src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" border="0" alt="Buy me a ko-fi" /></a>
-
-</div>
-
-<div align="center">
-
-[<img src="https://img.shields.io/badge/Telegram-26A5E4.svg?style=for-the-badge&logo=Telegram&logoColor=white">](https://t.me/CitraIntegrityTrick)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black)](https://www.buymeacoffee.com/citra_standalone)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=kofi&logoColor=white)](https://ko-fi.com/V7V814RHYM)
+[![Telegram](https://img.shields.io/badge/Telegram-26A5E4.svg?style=for-the-badge&logo=Telegram&logoColor=white)](https://t.me/CitraIntegrityTrick)
+[![Release](https://img.shields.io/github/v/release/Citra-Standalone/TSupport-Advance?label=Release&logo=github)](https://github.com/Citra-Standalone/TSupport-Advance/releases/latest)
+[![Stars](https://img.shields.io/github/stars/citra-standalone/TSupport-Advance?style=flat&label=Stars&logo=github)](https://github.com/Citra-Standalone/TSupport-Advance/stargazers)
 
 </div>
 
