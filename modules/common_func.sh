@@ -1,9 +1,5 @@
 #!/bin/sh
 
-# Portions of this file are derived from Specter project
-# Licensed under GNU GPLv3
-# See: https://www.gnu.org/licenses/gpl-3.0.html
-#
 # This file may contain both original code and GPLv3-derived code.
 # GPLv3 sections remain under GPLv3 terms.
 
