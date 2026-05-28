@@ -39,15 +39,7 @@ This is magisk module by citra-standalone for passing attestation and DroidGuard
 
 `THIS CODE IS STRICTLY FOR EXPERIMENTATION AND EDUCATIONAL PURPOSES ONLY. I HEREBY DISCLAIM ALL RESPONSIBILITY FOR ANY USE BEYOND THIS INTENDED PURPOSE.`
 
-<<<<<<< Updated upstream
----
-
-# Usage & Terms
-
-<div style="color:red; white-space: pre-wrap; word-wrap: break-word;">
-=======
 `INCLUDING BUT NOT LIMITED TO: cheating in games, system exploits, security bypass, unauthorized reverse engineering, injection techniques, illegal automation, cracking, hacking, data manipulation, or ANY violation of platform rules or terms of service.`
->>>>>>> Stashed changes
   
 `ALL RISKS ARE SOLELY ASSUMED BY THE USER WITHOUT EXCEPTION. THIS INCLUDES PERMANENT BANS, ACCOUNT SUSPENSION, DEVICE OR IP BLACKLISTING, DATA LOSS, SYSTEM DAMAGE, APPLICATION FAILURE, AND EVEN POSSIBLE LEGAL ACTION FROM RELEVANT AUTHORITIES OR PLATFORM OWNERS.`
 
