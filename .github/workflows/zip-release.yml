@@ -60,13 +60,20 @@ jobs:
         if: env.DUPLICATE == 'false'
         run: cd modules && zip -r ../TSupport-Advance-${{ env.VERSION }}.zip *
         
+      - name: Prepare Release Body
+        if: env.DUPLICATE == 'false'
+        run: |
+          cp changelog.md release_body.md
+          
+          perl -0777 -i -pe 's/## Support me.*?---/## Support me\n\n'$(sed ':a;N;$!ba;s/\n/\\n/g' supportme.md | sed "s/'/\\\\'/g")'/s' release_body.md
+
       - name: Create Release
         if: env.DUPLICATE == 'false'
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.TAG_NAME }}
           name: ${{ env.TAG_NAME }}
-          body_path: changelog.md
+          body_path: release_body.md
           files: TSupport-Advance-${{ env.VERSION }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
