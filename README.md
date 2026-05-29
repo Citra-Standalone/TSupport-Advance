@@ -22,6 +22,7 @@ Moonlight shines the lake, unveiling a path for the brave to advance.🌙
 <summary>Table of Contents</summary>
 
 - [About](#about)
+- [Requirements](#requirements)
 - [Terms of Use](#terms-of-use)
 - [Support me](#support-me)
 - [Acknowledgements](#acknowledgements)
