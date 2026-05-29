@@ -22,7 +22,7 @@ Moonlight shines the lake, unveiling a path for the brave to advance.🌙
 <summary>Table of Contents</summary>
 
 - [About](#about)
-- [Usage & Terms](#usage--terms)
+- [Terms of Use](#terms-of-use)
 - [Support me](#support-me)
 - [Acknowledgements](#acknowledgements)
 
@@ -32,7 +32,7 @@ Moonlight shines the lake, unveiling a path for the brave to advance.🌙
 
 This is magisk module by citra-standalone for passing attestation and DroidGuard, focusing on Stock ROM environments.
 
-## Usage & Terms
+## Terms of Use
 
 `THIS CODE IS STRICTLY FOR EXPERIMENTATION AND EDUCATIONAL PURPOSES ONLY. I HEREBY DISCLAIM ALL RESPONSIBILITY FOR ANY USE BEYOND THIS INTENDED PURPOSE.`
 
