@@ -7,6 +7,8 @@ CONF="/sdcard/TSupportConfig"
 TARGET_DIR="/data/adb/tricky_store"
 TARGET_FILE="$TARGET_DIR/target.txt"
 TARGET_BACKUP="$TARGET_DIR/target.txt.bak"
+OMK_DIR="/data/misc/keystore/omk"
+OMK_TARGET="$OMK_DIR/injector.toml"
 
 # Get all installed package names
 packages=$(awk '{print $1}' /data/system/packages.list)
@@ -47,56 +49,93 @@ merge_on_stop() {
     done
 }
 
+merge_toml() {
+    local raw_item="$1"
+    local file="$2"
+    
+    local item=${raw_item%%[?!]*}
+    
+    if ! grep -qF "\"$item\"" "$file"; then
+        sed -i "/scoop = \[/,/\]/ {
+            /\]/i \    \"$item\",
+        }" "$file"
+    fi
+
+}
+
+
+
+
 # Check Required File.
 [ ! -f "$TARGET_FILE" ] && touch "$TARGET_FILE"
 [ ! -f "$CONF/customize.txt" ] && touch "$CONF/customize.txt"   
-
-# Handle target list generation based on conditions
-if [ -d $TARGET_DIR ] && [ -f $CONF/customize.txt ] && ! head -n 1 $CONF/customize.txt | grep -qi "^#disable"; then
+    
+if { [ -d $TARGET_DIR ] || [ -d $OMK_DIR ]; } && [ -f $CONF/customize.txt ] && ! head -n 1 $CONF/customize.txt | grep -qi "^#disable"; then
     echo -e "\n=== CITarget-SmartMerge ==="
     echo "- All conditions matched"
-    cat $TARGET_FILE > $TARGET_BACKUP && echo "> Done backup target.txt"
     
-    if echo "$(grep '^author=' "/data/adb/modules/tricky_store/module.prop" | head -n 1 | cut -d'=' -f2 | tr '[:upper:]' '[:lower:]')" | grep -q 'jingmatrix'; then
-
-        echo "- TrickyStore ( JingMatrix Fork )"
-
-        for package in $(cat $TARGET_FILE); do  
-            if echo "$CRITICAL_PACKAGES" | grep -q "^$package$"; then
-                liner $package $TARGET_FILE
-            elif grep -q "^$package$" $CONF/customize.txt; then
-                liner $package $TARGET_FILE
-            fi
-            reform $TARGET_FILE
-        done
-
-        apply_custom_list $CONF/customize.txt $TARGET_FILE $HEADER
+    if [ -d /data/adb/modules/oh_my_keymint ]; then
+        cat $OMK_TARGET > $OMK_TARGET.bak && echo "> Done backup injector.toml"
         
-        for package in $CRITICAL_PACKAGES; do  
-            if grep -q "^$package$" "$TARGET_FILE"; then
-                liner $package $TARGET_FILE
-                reform $TARGET_FILE
-                liner "" $TARGET_FILE $package
-            fi
-            reform $TARGET_FILE
+        for package in $(cat "$CONF/customize.txt"); do
+            case "$package" in
+                ""|\#*) continue ;;
+            esac
+            
+            merge_toml "$package" "$OMK_TARGET"
         done
-                             
-    else
-        merge_on_stop
+        
+        if grep -q '[^[:space:]]' -- "$OMK_TARGET"; then
+            echo "- Injector.toml updated."
+        else
+            echo "- Injector.toml is empty."
+        fi        
     fi
     
-    for package in $(cat $TARGET_FILE); do
-        if [ $package = "$HEADER" ] || [ $package = "" ]; then
-            continue
-        else
-            echo "++ $package"
-        fi
-    done
+    if [ -d /data/adb/modules/tricky_store ]; then
+        cat $TARGET_FILE > $TARGET_BACKUP && echo "> Done backup target.txt"
+        
+        if echo "$(grep '^author=' "/data/adb/modules/tricky_store/module.prop" | head -n 1 | cut -d'=' -f2 | tr '[:upper:]' '[:lower:]')" | grep -q 'jingmatrix'; then
     
-    if grep -q '[^[:space:]]' -- "$TARGET_FILE"; then
-        echo "- Target.txt updated."
-    else
-        echo "- Target.txt is empty."
+            echo "- TrickyStore ( JingMatrix Fork )"
+    
+            for package in $(cat $TARGET_FILE); do  
+                if echo "$CRITICAL_PACKAGES" | grep -q "^$package$"; then
+                    liner $package $TARGET_FILE
+                elif grep -q "^$package$" $CONF/customize.txt; then
+                    liner $package $TARGET_FILE
+                fi
+                reform $TARGET_FILE
+            done
+    
+            apply_custom_list $CONF/customize.txt $TARGET_FILE $HEADER
+            
+            for package in $CRITICAL_PACKAGES; do  
+                if grep -q "^$package$" "$TARGET_FILE"; then
+                    liner $package $TARGET_FILE
+                    reform $TARGET_FILE
+                    liner "" $TARGET_FILE $package
+                fi
+                reform $TARGET_FILE
+            done
+                                 
+        else
+            merge_on_stop
+        fi
+        
+        for package in $(cat $TARGET_FILE); do
+            if [ $package = "$HEADER" ] || [ $package = "" ]; then
+                continue
+            else
+                echo "++ $package"
+            fi
+        done
+        
+        if grep -q '[^[:space:]]' -- "$TARGET_FILE"; then
+            echo "- Target.txt updated."
+        else
+            echo "- Target.txt is empty."
+        fi
     fi
     
     echo "=== ENDED ==="

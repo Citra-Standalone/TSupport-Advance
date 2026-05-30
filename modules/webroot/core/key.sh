@@ -283,12 +283,12 @@ if [ "$NOEC" = "1" ] && [ "$NORSA" = "1" ]; then
 fi
 
 # Generate the final keybox.xml file
-if [ -d /data/adb/tricky_store ]; then
-
+if { [ -d /data/adb/modules/tricky_store ] && [ ! -f /data/adb/modules/tricky_store/disable ]; } || { [ -d /data/adb/modules/oh_my_keymint ] && [ ! -f /data/adb/modules/oh_my_keymint/disable ]; }; then
+    
     keybox
     
     # Handle backup and replacement of the existing keybox.xml
-    if [ -f /data/adb/tricky_store/keybox.xml ] && [ -f /data/adb/tricky_store/keybox.xml.bak ]; then
+    if [ ! -f /data/adb/modules/tricky_store/disable ] && [ -f /data/adb/tricky_store/keybox.xml ] && [ -f /data/adb/tricky_store/keybox.xml.bak ]; then
         echo "! Backup exist"
         if [ "$AUTO_KEY_MODE" = "0" ]; then
             key backup OVERWRITE SKIP result
@@ -311,7 +311,32 @@ if [ -d /data/adb/tricky_store ]; then
         else
             exit 0
         fi
-
+    elif [ ! -f "/data/adb/modules/oh_my_keymint/disable" ] && [ -f "/data/misc/keystore/omk/keybox.xml" ] && [ -f "/data/misc/keystore/omk/keybox.xml" ]; then
+        echo "! Backup exist"
+        if [ "$AUTO_KEY_MODE" = "0" ]; then
+            key backup OVERWRITE SKIP result
+        else
+            if [ "$OVERWRITE_BACKUP_CHOICE" = "overwrite" ]; then result=1; else result=0; fi
+        fi
+        
+        if [ "$NOEC" = 0 ] && [ "$NORSA" = 0 ]; then
+            if [ "$result" -eq 0 ]; then
+                mv "$DIR/keybox.xml" /data/misc/keystore/omk/keybox.xml
+                echo "- Moving new keybox.xml"
+            elif [ "$result" -eq 1 ]; then
+                cat /data/misc/keystore/omk/keybox.xml > /data/misc/keystore/omk/keybox.xml.bak
+                mv "$DIR/keybox.xml" /data/misc/keystore/omk/keybox.xml
+                echo "- Moving new keybox.xml"
+            elif [ "$result" -eq 2 ]; then
+                cleaner
+                exit 2
+            else
+                exit 0
+            fi
+        else
+            echo "- Unsupported Key Format."
+            exit 0
+        fi
     elif [ ! -f /data/adb/tricky_store/keybox.xml.bak ] && [ -f /data/adb/tricky_store/keybox.xml ]; then
         echo "- Creating a backup ..."
         [ "$NOEC" = "0" ] && cat /data/adb/tricky_store/keybox.xml > /data/adb/tricky_store/locked.xml
@@ -322,8 +347,16 @@ if [ -d /data/adb/tricky_store ]; then
     fi
     sleep 0.5
     [ -f /data/adb/tricky_store/keybox.xml ] && echo "- Successfully retrieved"
+    
 else
-    echo "! No tricky store found"
+    if [ -d /data/adb/modules/tricky_store ] || [ -d /data/adb/modules/oh_my_keymint ]; then 
+    
+    [ -f /data/adb/modules/tricky_store/disable ] && echo "! TrickyStore Disabled"
+    [ -f /data/adb/modules/oh_my_keymint/disable ] && echo "! OhMyKeymint Disabled"
+            
+    else
+        echo "! No TrickyStore or OhMyKeymint found"
+    fi
 fi
 
 cleaner

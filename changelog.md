@@ -1,6 +1,7 @@
-## TSupport-Advance ( R260528 )
-Update changes:
-- Renew VBMeta Fixer
+## TSupport-Advance ( R260530 )
+New changes:
+- target.sh : add support for OhMyKeymint
+- key.sh : add support for OhMyKeymint
 
 ---
 ## Support me
