@@ -334,8 +334,9 @@ if { [ -d /data/adb/modules/tricky_store ] && [ ! -f /data/adb/modules/tricky_st
                 exit 0
             fi
         else
+            cat /data/misc/keystore/omk/keybox.xml > /data/misc/keystore/omk/keybox.xml.bak
+            mv "$DIR/keybox.xml" /data/misc/keystore/omk/keybox.xml
             echo "- Unsupported Key Format."
-            exit 0
         fi
     elif [ ! -f /data/adb/tricky_store/keybox.xml.bak ] && [ -f /data/adb/tricky_store/keybox.xml ]; then
         echo "- Creating a backup ..."
