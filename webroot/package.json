@@ -1,5 +1,5 @@
 {
-  "name": "tsp-webui",
+  "name": "webroot",
   "private": true,
   "version": "0.0.0",
   "type": "module",

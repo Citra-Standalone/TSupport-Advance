@@ -1,7 +1,6 @@
-## TSupport-Advance ( R260530 )
-New changes:
-- target.sh : add support for OhMyKeymint
-- key.sh : add support for OhMyKeymint
+## TSupport-Advance ( R260531 )
+Update changes:
+- suspicous_prop.sh : added new suspicous prop
 
 ---
 ## Support me

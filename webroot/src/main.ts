@@ -50,11 +50,14 @@ async function checkSuspicousProps() {
     persist.com.luckyzyx.luckytool.log.level
     persist.com.luckyzyx.luckytool.debug
     persist.com.luckyzyx.luckytool.enable
-    "
+    persist.sys.omk.restart.all
+    persist.sys.omk.restart.injector
+    persist.sys.omk.restart.keymint
+    "    
     foundloophole=0
     
     for prop in $sus_props; do
-        getprop "$prop" | grep -q . && { foundloophole=1; break; }
+        getprop | grep -Fq "[$prop]:" && { foundloophole=1; }
     done
     
     echo "$foundloophole"
