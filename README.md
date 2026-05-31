@@ -35,7 +35,7 @@ This is magisk module by citra-standalone for passing attestation and DroidGuard
 
 ## Requirements
 
-- Device with Root [ Magisk / KernelSU / APatch ]
+- Root [ Magisk / KernelSU / APatch ]
 - TEESimulator or Tricky Store
 
 ## Terms of Use
