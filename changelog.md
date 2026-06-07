@@ -1,6 +1,7 @@
-## TSupport-Advance ( R260531 )
+## TSupport-Advance ( R260607 )
 Update changes:
-- suspicous_prop.sh : added new suspicous prop
+- core env.sh : detection fix
+- webroot main.ts : detection fix and color fix
 
 ---
 ## Support me

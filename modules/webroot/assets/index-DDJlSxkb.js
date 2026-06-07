@@ -43,14 +43,14 @@
     fi
     `);status=String(e.stdout||e).trim(),m.textContent=status,status===`releasekey`?m.style.color=`#00ff88`:status===`testkey`?m.style.color=`#ffff00`:m.style.color=`#888888`}async function C(){let e=await n(`getenforce`),t=String(e.stdout||e).trim();h.textContent=t,t===`Enforcing`?h.style.color=`#00ff88`:t===`Permissive`?h.style.color=`#ff4444`:h.style.color=`#888888`}async function w(){let e=await n(`
     TARGET_DIR="/data/adb/tricky_store"
-    if [ -d "$TARGET_DIR" ] && grep -q "teeBroken=true" "$TARGET_DIR/tee_status"; then
+    if [ -d "$TARGET_DIR" ] && grep -q "teeBroken=true" "$TARGET_DIR/tee_status" || [ -d "$TARGET_DIR" ] && grep -q "tee_broken=true" "$TARGET_DIR/tee_status.txt"; then
         echo "broken"
-    elif [ -d "$TARGET_DIR" ] && grep -q "teeBroken=false" "$TARGET_DIR/tee_status"; then
+    elif [ -d "$TARGET_DIR" ] && grep -q "teeBroken=false" "$TARGET_DIR/tee_status" || [ -d "$TARGET_DIR" ] && grep -q "tee_broken=false" "$TARGET_DIR/tee_status.txt"; then
         echo "normal"
     else
         echo "unknown"
     fi
-    `),t=String(e.stdout||e).trim();g.textContent=t,t===`normal`?g.style.color=`#00ff88`:t===`broken`?g.style.color=`#ffff00`:g.style.color=`#ff4444`}async function T(){let e=await n(`
+    `),t=String(e.stdout||e).trim();g.textContent=t,t===`normal`?g.style.color=`#00ff88`:t===`broken`?g.style.color=`#ffff00`:g.style.color=`#888888`}async function T(){let e=await n(`
     if [ -d "/data/data/com.google.android.hmal" ] || [ -d "/data/data/com.tsng.hidemyapplist" ] || [ -d "/data/data/org.frknkrc44.hma_oss" ]; then
         echo "Installed"
     else

@@ -36,9 +36,9 @@ else
     echo -e "SELinux : disabled"
 fi
 
-if [ -d "$TARGET_DIR" ] && grep -q "teeBroken=true" "$TARGET_DIR/tee_status"; then
+if [ -d "$TARGET_DIR" ] && grep -q "teeBroken=true" "$TARGET_DIR/tee_status" || [ -d "$TARGET_DIR" ] && grep -q "tee_broken=true" "$TARGET_DIR/tee_status.txt"; then
     echo -e "TEE Status : broken"
-elif [ -d "$TARGET_DIR" ] && grep -q "teeBroken=false" "$TARGET_DIR/tee_status"; then
+elif [ -d "$TARGET_DIR" ] && grep -q "teeBroken=false" "$TARGET_DIR/tee_status" || [ -d "$TARGET_DIR" ] && grep -q "tee_broken=false" "$TARGET_DIR/tee_status.txt"; then
     echo -e "TEE Status : normal"
 else
     echo -e "TEE Status : unknown"

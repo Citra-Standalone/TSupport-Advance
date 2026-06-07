@@ -140,9 +140,9 @@ async function checkSelinuxStatus() {
 async function checkTeeStatus() {
     const result: any = await exec(`
     TARGET_DIR="/data/adb/tricky_store"
-    if [ -d "$TARGET_DIR" ] && grep -q "teeBroken=true" "$TARGET_DIR/tee_status"; then
+    if [ -d "$TARGET_DIR" ] && grep -q "teeBroken=true" "$TARGET_DIR/tee_status" || [ -d "$TARGET_DIR" ] && grep -q "tee_broken=true" "$TARGET_DIR/tee_status.txt"; then
         echo "broken"
-    elif [ -d "$TARGET_DIR" ] && grep -q "teeBroken=false" "$TARGET_DIR/tee_status"; then
+    elif [ -d "$TARGET_DIR" ] && grep -q "teeBroken=false" "$TARGET_DIR/tee_status" || [ -d "$TARGET_DIR" ] && grep -q "tee_broken=false" "$TARGET_DIR/tee_status.txt"; then
         echo "normal"
     else
         echo "unknown"
@@ -156,7 +156,7 @@ async function checkTeeStatus() {
     } else if (status === "broken") {
         teeStatus.style.color = "#ffff00";
     } else {
-        teeStatus.style.color = "#ff4444";
+        teeStatus.style.color = "#888888";
     }
 }
 
