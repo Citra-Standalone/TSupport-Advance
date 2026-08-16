@@ -1,7 +1,6 @@
-## TSupport-Advance ( R260607 )
+## TSupport-Advance ( R260816 )
 Update changes:
-- core env.sh : detection fix
-- webroot main.ts : detection fix and color fix
+- [ key.sh & target.sh ] TEESim 4.0 Support.
 
 ---
 ## Support me

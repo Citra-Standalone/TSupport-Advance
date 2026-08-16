@@ -283,7 +283,7 @@ if [ "$NOEC" = "1" ] && [ "$NORSA" = "1" ]; then
 fi
 
 # Generate the final keybox.xml file
-if { [ -d /data/adb/modules/tricky_store ] && [ ! -f /data/adb/modules/tricky_store/disable ]; } || { [ -d /data/adb/modules/oh_my_keymint ] && [ ! -f /data/adb/modules/oh_my_keymint/disable ]; }; then
+if { [ -d /data/adb/modules/tricky_store ] && [ ! -f /data/adb/modules/tricky_store/disable ]; } || { [ -d /data/adb/modules/teesim ] && [ ! -f /data/adb/modules/teesim/disable ]; } || { [ -d /data/adb/modules/oh_my_keymint ] && [ ! -f /data/adb/modules/oh_my_keymint/disable ]; }; then
     
     keybox
     
@@ -338,13 +338,21 @@ if { [ -d /data/adb/modules/tricky_store ] && [ ! -f /data/adb/modules/tricky_st
             mv "$DIR/keybox.xml" /data/misc/keystore/omk/keybox.xml
             echo "- Unsupported Key Format."
         fi
+        
+    elif [ ! -f /data/adb/teesim/keybox.xml.bak ] && [ -f /data/adb/teesim/keybox.xml ]; then
+        echo "- Creating a backup ..."
+        [ "$NOEC" = "0" ] && cat /data/adb/teesim/keybox.xml > /data/adb/teesim/locked.xml
+        cat /data/adb/teesim/keybox.xml > /data/adb/teesim/keybox.xml.bak
+        mv "$DIR/keybox.xml" /data/adb/teesim/keybox.xml
+        
     elif [ ! -f /data/adb/tricky_store/keybox.xml.bak ] && [ -f /data/adb/tricky_store/keybox.xml ]; then
         echo "- Creating a backup ..."
         [ "$NOEC" = "0" ] && cat /data/adb/tricky_store/keybox.xml > /data/adb/tricky_store/locked.xml
         cat /data/adb/tricky_store/keybox.xml > /data/adb/tricky_store/keybox.xml.bak
         mv "$DIR/keybox.xml" /data/adb/tricky_store/keybox.xml
     else
-        mv "$DIR/keybox.xml" /data/adb/tricky_store/keybox.xml
+        [ -d /data/adb/teesim ] && mv "$DIR/keybox.xml" /data/adb/teesim/keybox.xml
+        [ -d /data/adb/tricky_store ] && mv "$DIR/keybox.xml" /data/adb/tricky_store/keybox.xml
     fi
     sleep 0.5
     [ -f /data/adb/tricky_store/keybox.xml ] && echo "- Successfully retrieved"
