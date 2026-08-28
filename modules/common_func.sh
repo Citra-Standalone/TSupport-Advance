@@ -343,7 +343,7 @@ vbmeta_digest() {
 
 boothash() {
 
-    if [ -f /data/adb/teesim/harvested.json ]; then
+    if [ -f /data/adb/teesim/harvested.json ] && [ -d /data/adb/modules/teesim ]; then
         value=$(cat /data/adb/teesim/harvested.json | sed -n 's/.*"verifiedBootHash": *"\([^"]*\)".*/\1/p' | tr -d '\\' | base64 -d | od -An -v -tx1 | tr -d ' \n')
         if [ -n "$value" ]; then
             echo "$value" > "$BOOT_HASH_FILE"
