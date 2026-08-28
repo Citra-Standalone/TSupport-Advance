@@ -342,6 +342,15 @@ vbmeta_digest() {
 }
 
 boothash() {
+
+    if [ -f /data/adb/teesim/harvested.json ]; then
+        value=$(cat /data/adb/teesim/harvested.json | sed -n 's/.*"verifiedBootHash": *"\([^"]*\)".*/\1/p' | tr -d '\\' | base64 -d | od -An -v -tx1 | tr -d ' \n')
+        if [ -n "$value" ]; then
+            echo "$value" > "$BOOT_HASH_FILE"
+            return 1
+        fi
+    fi
+    
     # Checking Suffix for A/B Partition Device
     suffix=$(getprop ro.boot.slot_suffix)
     
