@@ -1,6 +1,6 @@
-## TSupport-Advance ( R260829 )
+## TSupport-Advance ( R260830 )
 Update changes:
-- [ common_func.sh ] Fix boothash missmatch with TEESim 4.0
+- [ target.sh ] Update duplicate package fixer for TEESim 4.0
 
 ---
 ## Support me

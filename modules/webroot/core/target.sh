@@ -75,156 +75,314 @@ parse_teesim() (
     customize_file=$CONF/customize.txt
     config_file=$TEESIM_CONF
     backup_file=$config_file.bak
+    tmp_file=$config_file.tmp
     custom_apps=
-    depth=0
-    in_default=0
-    in_apps=0
-    found_default=0
-    found_keybox=0
-    found_apps=0
+
+    # Remove the fixed temporary file on every exit path.
+    trap 'rm -f "$tmp_file"' 0 1 2 3 15
 
     [ -r "$customize_file" ] || {
         echo "! Customize file not found: $customize_file"
         exit 1
     }
-
     [ -f "$config_file" ] || {
         echo "! Config file not found: $config_file"
         exit 1
     }
 
-    if ! grep -qE '"default"[[:space:]]*:[[:space:]]*\{' "$config_file"; then
-        echo "! Failed to parse, profile not found!"
-        exit 1
-    fi
+    add_unique() {
+        value=$1
+        list=$2
+        if ! printf '%s\n' "$list" | grep -qF -x "$value"; then
+            [ -n "$list" ] && list="$list
+"
+            list=$list$value
+        fi
+        printf '%s' "$list"
+    }
 
-    # Read and normalize custom apps.
+    append_value() {
+        list=$1
+        value=$2
+        [ -n "$list" ] && list="$list
+"
+        printf '%s%s' "$list" "$value"
+    }
+
+    # Read and normalize customize.txt.
     while IFS= read -r item || [ -n "$item" ]; do
         item=$(printf '%s\n' "$item" |
             sed 's/\r$//;s/^[[:space:]]*//;s/[[:space:]]*$//')
-
         case "$item" in
             ""|\#*) continue ;;
         esac
-
         item=$(printf '%s\n' "$item" | sed 's/[!?]$//')
         [ -n "$item" ] || continue
-
-        if ! printf '%s\n' "$custom_apps" | grep -qF -x "$item"; then
-            [ -n "$custom_apps" ] && custom_apps="$custom_apps
-"
-            custom_apps="$custom_apps$item"
-        fi
+        custom_apps=$(add_unique "$item" "$custom_apps")
     done < "$customize_file"
 
-    update_depth() {
-        braces=$(printf '%s\n' "$1" | sed 's/[^{}]//g')
+    # Pass 1: scan every apps array and count package occurrences.
+    scan_config() {
+        scan_file=$1
+        depth=0
+        in_apps=0
+        in_default=0
+        found_default=0
+        found_apps=0
+        all_packages=
+        default_packages=
 
-        while [ -n "$braces" ]; do
-            first=${braces%"${braces#?}"}
+        update_depth() {
+            braces=$(printf '%s\n' "$1" | sed 's/[^{}]//g')
+            while [ -n "$braces" ]; do
+                first=${braces%${braces#?}}
+                case "$first" in
+                    "{") depth=$((depth + 1)) ;;
+                    "}") depth=$((depth - 1)) ;;
+                esac
+                braces=${braces#?}
+            done
+        }
 
-            case "$first" in
-                "{") depth=$((depth + 1)) ;;
-                "}") depth=$((depth - 1)) ;;
-            esac
-
-            braces=${braces#?}
-        done
-    }
-
-    # Generate the updated config in memory.
-    new_config=$(
         while IFS= read -r line || [ -n "$line" ]; do
             if [ "$in_apps" -eq 1 ]; then
                 trimmed=$(printf '%s\n' "$line" |
                     sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
-
                 case "$trimmed" in
                     ']'|'],')
-                        printf '%s\n' "$line"
                         in_apps=0
+                        continue
+                        ;;
+                    '"'*)
+                        package=$(printf '%s\n' "$trimmed" |
+                            sed 's/^"//;s/",[[:space:]]*$//;s/"[[:space:]]*$//')
+                        all_packages=$(append_value "$all_packages" "$package")
+                        if [ "$in_default" -eq 1 ]; then
+                            default_packages=$(add_unique "$package" "$default_packages")
+                        fi
                         ;;
                 esac
-
                 continue
             fi
 
             if [ "$found_default" -eq 0 ] &&
                 printf '%s\n' "$line" |
-                grep -qE '"default"[[:space:]]*:[[:space:]]*\{'
-            then
+                grep -qE '^[[:space:]]*"default"[[:space:]]*:[[:space:]]*\{'; then
                 found_default=1
                 in_default=1
                 update_depth "$line"
+                default_depth=$depth
+                continue
+            fi
+
+            # profiles is depth 2; its direct children are preset objects.
+            if [ "$depth" -eq 2 ] &&
+                printf '%s\n' "$line" |
+                grep -qE '^[[:space:]]*"[^"]+"[[:space:]]*:[[:space:]]*\{'; then
+                case "$line" in
+                    *'"default"'*) in_default=1 ;;
+                    *) in_default=0 ;;
+                esac
+            fi
+
+            if printf '%s\n' "$line" |
+                grep -qE '^[[:space:]]*"apps"[[:space:]]*:[[:space:]]*\['; then
+                in_apps=1
+                found_apps=1
+                continue
+            fi
+
+            update_depth "$line"
+            if [ "$in_default" -eq 1 ] && [ "$depth" -lt "$default_depth" ]; then
+                in_default=0
+            fi
+        done < "$scan_file"
+
+        [ "$found_default" -eq 1 ] && [ "$found_apps" -eq 1 ] || return 1
+
+        # Only packages absent from every preset are normally added to default.
+        item=
+        packages_to_default=
+        while IFS= read -r item || [ -n "$item" ]; do
+            [ -n "$item" ] || continue
+            if ! printf '%s\n' "$all_packages" | grep -qF -x "$item"; then
+                packages_to_default=$(add_unique "$item" "$packages_to_default")
+                all_packages=$(append_value "$all_packages" "$item")
+            fi
+        done <<EOF_CUSTOM
+$custom_apps
+EOF_CUSTOM
+
+        # Find packages occurring at least twice after normal insertion.
+        seen_packages=
+        duplicate_packages=
+        package=
+        while IFS= read -r package || [ -n "$package" ]; do
+            [ -n "$package" ] || continue
+            if printf '%s\n' "$seen_packages" | grep -qF -x "$package"; then
+                duplicate_packages=$(add_unique "$package" "$duplicate_packages")
+            else
+                seen_packages=$(append_value "$seen_packages" "$package")
+            fi
+        done <<EOF_ALL
+$all_packages
+EOF_ALL
+    }
+
+    scan_config "$config_file" || {
+        echo "! Failed to scan config.json"
+        exit 1
+    }
+
+    # Pass 2: remove only duplicate packages from every preset, then restore
+    # each duplicate package and each newly requested package in default only.
+    render_config() {
+        render_file=$1
+        depth=0
+        in_apps=0
+        in_default=0
+        found_default=0
+        found_apps=0
+        apps_indent=
+        apps_is_default=0
+        kept_apps=
+
+        update_depth_render() {
+            braces=$(printf '%s\n' "$1" | sed 's/[^{}]//g')
+            while [ -n "$braces" ]; do
+                first=${braces%${braces#?}}
+                case "$first" in
+                    "{") depth=$((depth + 1)) ;;
+                    "}") depth=$((depth - 1)) ;;
+                esac
+                braces=${braces#?}
+            done
+        }
+
+        emit_apps() {
+            pending=
+            package=
+            while IFS= read -r package || [ -n "$package" ]; do
+                [ -n "$package" ] || continue
+                if [ -n "$pending" ]; then
+                    printf '%s,\n' "$pending"
+                fi
+                pending=$apps_indent'  "'$package'"'
+            done <<EOF_KEPT
+$kept_apps
+EOF_KEPT
+
+            if [ "$apps_is_default" -eq 1 ]; then
+                package=
+                restore_list=$duplicate_packages
+                restore_list=$(append_value "$restore_list" "$packages_to_default")
+                while IFS= read -r package || [ -n "$package" ]; do
+                    [ -n "$package" ] || continue
+                    if ! printf '%s\n' "$kept_apps" | grep -qF -x "$package"; then
+                        if [ -n "$pending" ]; then
+                            printf '%s,\n' "$pending"
+                        fi
+                        pending=$apps_indent'  "'$package'"'
+                        kept_apps=$(add_unique "$package" "$kept_apps")
+                    fi
+                done <<EOF_RESTORE
+$restore_list
+EOF_RESTORE
+            fi
+
+            [ -n "$pending" ] && printf '%s\n' "$pending"
+        }
+
+        while IFS= read -r line || [ -n "$line" ]; do
+            if [ "$in_apps" -eq 1 ]; then
+                trimmed=$(printf '%s\n' "$line" |
+                    sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+                case "$trimmed" in
+                    ']'|'],')
+                        emit_apps
+                        printf '%s\n' "$line"
+                        in_apps=0
+                        apps_is_default=0
+                        kept_apps=
+                        continue
+                        ;;
+                    '"'*)
+                        package=$(printf '%s\n' "$trimmed" |
+                            sed 's/^"//;s/",[[:space:]]*$//;s/"[[:space:]]*$//')
+                        if ! printf '%s\n' "$duplicate_packages" |
+                            grep -qF -x "$package"; then
+                            kept_apps=$(add_unique "$package" "$kept_apps")
+                        fi
+                        ;;
+                esac
+                continue
+            fi
+
+            if [ "$found_default" -eq 0 ] &&
+                printf '%s\n' "$line" |
+                grep -qE '^[[:space:]]*"default"[[:space:]]*:[[:space:]]*\{'; then
+                found_default=1
+                in_default=1
+                update_depth_render "$line"
                 default_depth=$depth
                 printf '%s\n' "$line"
                 continue
             fi
 
-            if [ "$in_default" -eq 1 ]; then
-                if printf '%s\n' "$line" |
-                    grep -qE '"keybox"[[:space:]]*:[[:space:]]*"[^"]*"'
-                then
-                    line=$(printf '%s\n' "$line" |
-                        sed 's/"keybox"[[:space:]]*:[[:space:]]*"[^"]*"/"keybox": "keybox.xml"/')
-                    found_keybox=1
-                fi
+            # Detect the current preset before changing keybox or apps.
+            if [ "$depth" -eq 2 ] &&
+                printf '%s\n' "$line" |
+                grep -qE '^[[:space:]]*"[^"]+"[[:space:]]*:[[:space:]]*\{'; then
+                case "$line" in
+                    *'"default"'*) in_default=1 ;;
+                    *) in_default=0 ;;
+                esac
+            fi
 
-                if printf '%s\n' "$line" |
-                    grep -qE '"apps"[[:space:]]*:[[:space:]]*\['
-                then
-                    printf '%s\n' "$line"
-                    indent=$(printf '%s\n' "$line" | sed 's/[^[:space:]].*//')
-                    pending=
+            if [ "$in_default" -eq 1 ] &&
+                printf '%s\n' "$line" |
+                grep -qE '"keybox"[[:space:]]*:[[:space:]]*"[^"]*"'; then
+                line=$(printf '%s\n' "$line" |
+                    sed 's/"keybox"[[:space:]]*:[[:space:]]*"[^"]*"/"keybox": "keybox.xml"/')
+            fi
 
-                    for item in $custom_apps; do
-                        if [ -n "$pending" ]; then
-                            printf '%s,\n' "$pending"
-                        fi
-
-                        pending=$indent'  "'$item'"'
-                    done
-
-                    [ -n "$pending" ] && printf '%s\n' "$pending"
-                    in_apps=1
-                    found_apps=1
-                    update_depth "$line"
-                    continue
-                fi
+            if printf '%s\n' "$line" |
+                grep -qE '^[[:space:]]*"apps"[[:space:]]*:[[:space:]]*\['; then
+                printf '%s\n' "$line"
+                apps_indent=$(printf '%s\n' "$line" | sed 's/[^[:space:]].*//')
+                apps_is_default=$in_default
+                kept_apps=
+                in_apps=1
+                found_apps=1
+                continue
             fi
 
             printf '%s\n' "$line"
-            update_depth "$line"
-
+            update_depth_render "$line"
             if [ "$in_default" -eq 1 ] && [ "$depth" -lt "$default_depth" ]; then
                 in_default=0
             fi
-        done < "$config_file"
+        done < "$render_file"
 
-        if [ "$found_default" -ne 1 ] ||
-            [ "$found_keybox" -ne 1 ] ||
-            [ "$found_apps" -ne 1 ] ||
-            [ "$in_apps" -ne 0 ]
-        then
-            exit 2
-        fi
-    ) || {
-        echo "! Failed to parse config.json"
+        [ "$found_default" -eq 1 ] && [ "$found_apps" -eq 1 ] || return 1
+    }
+
+    new_config=$(render_config "$config_file") || {
+        echo "! Failed to render config.json"
         exit 1
     }
 
-    # Keep the original config as config.json.bak only after parsing succeeds.
-    cat "$config_file" > "$backup_file" || {
+    cp -p "$config_file" "$backup_file" || {
         echo "! Failed to create backup: $backup_file"
         exit 1
     }
 
-    printf '%s\n' "$new_config" > "$config_file" || {
-        echo "! Failed to update config: $config_file"
-        exit 1
-    }
+    rm -f "$tmp_file" || exit 1
+    printf '%s\n' "$new_config" > "$tmp_file" || exit 1
+    mv -f "$tmp_file" "$config_file" || exit 1
 
     echo "> Done backup $(basename "$backup_file")"
+    echo "> Duplicate packages repaired across all profiles"
     echo "> TEESimulator config updated"
 )
 

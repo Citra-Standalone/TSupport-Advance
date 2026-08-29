@@ -1,7 +1,7 @@
 id=tsupport-advance
 name=TSupport Advance
-version=R260829
-versionCode=260829
+version=R260830
+versionCode=260830
 author=Citra-Standalone
 description=Citra module for passing attestation and DroidGuard, focusing on Stock ROM environments.
 updateJson=https://raw.githubusercontent.com/citra-standalone/TSupport-Advance/main/release.json
